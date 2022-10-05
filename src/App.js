@@ -1,5 +1,4 @@
 import {
-  doc,
   collection,
   getDocs,
   onSnapshot
@@ -19,7 +18,7 @@ function App() {
       setPosts(snapShot.docs.map((doc) => ({ ...doc.data() })));
     });
 
-    /* リアルタイムで取得 */
+    //リアルタイムで取得
     onSnapshot(postData, (post) => {
       setPosts(post.docs.map((doc) => ({ ...doc.data() })));
     });
